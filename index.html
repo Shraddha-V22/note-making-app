@@ -1,29 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NotePad</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/4a54cdd6f0.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="app.js" defer></script>
-</head>
-<body>
-    <div id="root">
-        <!-- sidebar notes list -->
-        <div id="sidebar">
-            <button id="new-note-btn">New Note</button>
-            <!-- <div id="notes-list">
-                <div id="note-title">Note title</div>
-                <div id="note-body">Note body</div>              
-            </div> -->
-        </div>
-
-        <div id="note-preview">
-            <input type="text" id="input-title" placeholder="Enter the title...">
-            <textarea id="input-body" placeholder="Take note..."></textarea>
-            <button id="save-btn">Save note</button>
-        </div>
+  </head>
+  <body>
+    <div id="main">
+      <nav>
+        <h1 id="head-title">myNotes</h1>
+        <button id="new-note">New note</button>
+      </nav>
+      <section id="notes" class="container notes-section"></section>
     </div>
-</body>
+
+    <div class="overlay">
+      <section id="input-note">
+        <input type="text" id="input-title" placeholder="Title..." />
+        <textarea id="input-body" placeholder="Take note..."></textarea>
+        <button title="Bold"><i class="fa-solid fa-bold"></i></button>
+        <button title="underline"><i class="fa-solid fa-underline"></i></button>
+        <button title="copy text"><i class="fa-regular fa-copy"></i></button>
+        <button id="save-note" title="Save note">Save</button>
+        <button id="close-btn">close</button>
+      </section>
+    </div>
+  </body>
 </html>

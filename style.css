@@ -89,7 +89,7 @@ nav {
 
 .notes-section {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
   padding: 1rem;
   width: 100%;
@@ -112,6 +112,7 @@ nav {
 
 .note-card:hover {
     background-color: var(--clr-gray);
+    box-shadow: rgba(0, 0, 0) 0px 0px 2.6px;
 }
 
 .delete-note {
@@ -172,4 +173,16 @@ nav {
 
 #input-note button:hover {
   background-color: var(--clr-gray);
+}
+
+@media (width < 500px) {
+    #input-note {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    #input-body {
+        height: 85%;
+    }
 }

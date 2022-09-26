@@ -26,12 +26,16 @@ textarea {
 }
 
 input[type=checkbox] {
-  visibility: hidden;
+  display: none;
+}
+
+label {
+  padding: 0.5rem;
+  border-radius: 5px;
 }
 
 label:hover {
   background-color: hsl(var(--clr-gray));
-  padding: 0.5rem;
 }
 
 input:focus,

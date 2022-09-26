@@ -211,7 +211,7 @@ nav {
 @media (width < 500px) {
     #input-note {
         width: 100vw;
-        height: 100vh;
+        height: 90vh;
         border-radius: 0;
     }
 

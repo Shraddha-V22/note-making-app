@@ -25,6 +25,15 @@ textarea {
   font-family: inherit;
 }
 
+input[type=checkbox] {
+  visibility: hidden;
+}
+
+label:hover {
+  background-color: hsl(var(--clr-gray));
+  padding: 0.5rem;
+}
+
 input:focus,
 textarea:focus {
   outline: none;

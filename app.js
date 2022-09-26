@@ -111,7 +111,42 @@ function copyText() {
 const copyBtn = document.getElementById("copy-text");
 copyBtn.addEventListener("click", copyText);
 
-//making text bold
+function boldText() {
+  if(boldBtn.checked) {
+    noteBody.style.fontWeight = "bold";
+  } else {
+    noteBody.style.fontWeight = "";
+  }
+}
+
+const boldBtn = document.getElementById("bold-text");
+boldBtn.addEventListener("click", boldText);
+
+
+function underlineText() {
+  if(underlineBtn.checked) {
+    noteBody.style.textDecoration = "underline";
+  } else {
+    noteBody.style.textDecoration = "none";
+  }
+}
+
+const underlineBtn = document.getElementById("underline-text");
+underlineBtn.addEventListener("click", underlineText);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // function boldText() {
 //   const sel = window.getSelection();
 //   if (sel.rangeCount) {

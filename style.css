@@ -2,9 +2,9 @@
 /* reset properties */
 
 :root {
-  --clr-dark: #0c4a6e;
-  --clr-light: #e0f2fe;
-  --clr-gray: #d8e1e7;
+  --clr-dark: 202, 80%, 24%;
+  --clr-light: 204, 94%, 94%;
+  --clr-gray: 204, 24%, 88%;
 }
 
 *,
@@ -54,8 +54,8 @@ a {
 }
 
 nav {
-  background-color: var(--clr-dark);
-  color: var(--clr-light);
+  background-color: hsl(var(--clr-dark));
+  color: hsl(var(--clr-light));
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -65,14 +65,14 @@ nav {
 
 #new-note {
   background-color: transparent;
-  color: var(--clr-light);
+  color: hsl(var(--clr-light));
   border: 1px solid;
   border-radius: 5px;
 }
 
 #new-note:hover {
-  background-color: var(--clr-light);
-  color: var(--clr-dark);
+  background-color: hsl(var(--clr-light));
+  color: hsl(var(--clr-dark));
 }
 
 #bg-img {
@@ -98,7 +98,7 @@ nav {
 }
 
 .note-card {
-  border: 1px solid var(--clr-gray);
+  border: 1px solid hsl(var(--clr-gray));
   border: none;
   padding: 1rem;
   border-radius: 10px;
@@ -111,13 +111,13 @@ nav {
 }
 
 .note-card:hover {
-    background-color: var(--clr-gray);
+    background-color: hsla(var(--clr-dark), 0.2);
     box-shadow: rgba(0, 0, 0) 0px 0px 2.6px;
 }
 
 .delete-note {
   background-color: white;
-  border: 1px solid var(--clr-gray);
+  border: 1px solid hsl(var(--clr-gray));
   border-radius: 5px;
 }
 
@@ -127,7 +127,7 @@ nav {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(219, 226, 231, 0.5);
+  background: hsla(205, 20%, 88%, 0.5);
   display: grid;
   place-items: center;
   transition: var(--transition);
@@ -172,7 +172,7 @@ nav {
 }
 
 #input-note button:hover {
-  background-color: var(--clr-gray);
+  background-color: hsl(var(--clr-gray));
 }
 
 @media (width < 500px) {

@@ -69,7 +69,6 @@ function showNotes() {
 
 //deleting a note
 function deleteNote(id) {
-  console.log("I'm deleting", id);
 
   const notes = localStorage.getItem("notes");
 
@@ -90,7 +89,6 @@ function openNote(id) {
 
   noteTitle.value = note.children[0].textContent;
   noteBody.value = note.children[1].textContent;
-  console.log(note.children);
 
   openNoteInput.classList.add("new-note-modal");
 }
@@ -101,3 +99,30 @@ const closeBtn = document.getElementById("close-btn");
 closeBtn.addEventListener("click", () => {
   openNoteInput.classList.remove("new-note-modal");
 });
+
+
+//to copy text 
+function copyText() {
+    // Select the text field
+    noteBody.select();
+    noteBody.setSelectionRange(0, 99999); // For mobile devices
+  
+     // Copy the text inside the text field
+    navigator.clipboard.writeText(noteBody.value);
+}
+
+const copyBtn = document.getElementById("copy-text");
+
+copyBtn.addEventListener("click", copyText);
+
+// to Bold text 
+// function boldText() { 
+//     const strongElement = document.createElement("strong");
+//     const userSelection = window.getSelection();
+//     const selectedTextRange = userSelection.getRangeAt(0);
+//     selectedTextRange.surroundContents(strongElement);
+// }
+
+// const boldBtn = document.getElementById("bold-text");
+
+// boldBtn.addEventListener("click", boldText);

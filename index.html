@@ -23,13 +23,26 @@
 
     <div class="overlay">
       <section id="input-note">
-        <input type="text" id="input-title" placeholder="Title..." />
+        <input
+          type="text"
+          id="input-title"
+          placeholder="Title..."
+          autocomplete="off"
+        />
         <textarea id="input-body" placeholder="Take note..."></textarea>
-        <button title="Bold" id="bold-text"><i class="fa-solid fa-bold"></i></button>
-        <button title="Underline"><i class="fa-solid fa-underline"></i></button>
-        <button title="Copy text" id="copy-text"><i class="fa-regular fa-copy"></i></button>
-        <button id="save-note" title="Save note">Save</button>
-        <button id="close-btn">close</button>
+        <div id="buttons">
+          <button title="Bold" id="bold-text">
+            <i class="fa-solid fa-bold"></i>
+          </button>
+          <button title="Underline">
+            <i class="fa-solid fa-underline"></i>
+          </button>
+          <button title="Copy text" id="copy-text">
+            <i class="fa-regular fa-copy"></i>
+          </button>
+          <button id="save-note" title="Save note">Save</button>
+          <button id="close-btn">close</button>
+        </div>
       </section>
     </div>
   </body>

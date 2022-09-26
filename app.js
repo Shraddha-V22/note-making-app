@@ -48,7 +48,7 @@ function showNotes() {
         <div class="note-card">
           <div id="note${index}" onclick="openNote(this.id)">
             <h3>${element.title}</h3>
-            <p>${element.body}</p>
+            <p class="note-text">${element.body}</p>
           </div>
           <button id="${index}" onclick="deleteNote(this.id)" class="delete-note">Delete note</button>
         </div>
@@ -63,13 +63,13 @@ function showNotes() {
     notesElement.classList.remove("notes-section");
     notesElement.innerHTML = `
             <p id="empty-space">There are no notes. start making notes by clicking on 'New note' button</p>
+            <img src="bg-empty.png" alt="" id="empty-bg"/>
         `;
   }
 }
 
 //deleting a note
 function deleteNote(id) {
-
   const notes = localStorage.getItem("notes");
 
   if (notes == null) {
@@ -95,34 +95,35 @@ function openNote(id) {
 
 //closing note input modal
 const closeBtn = document.getElementById("close-btn");
-
 closeBtn.addEventListener("click", () => {
   openNoteInput.classList.remove("new-note-modal");
 });
 
-
-//to copy text 
+//to copy text
 function copyText() {
-    // Select the text field
-    noteBody.select();
-    noteBody.setSelectionRange(0, 99999); // For mobile devices
-  
-     // Copy the text inside the text field
-    navigator.clipboard.writeText(noteBody.value);
+  // Select the text field
+  noteBody.select();
+  noteBody.setSelectionRange(0, 99999); // For mobile devices
+
+  // Copy the text inside the text field
+  navigator.clipboard.writeText(noteBody.value);
 }
-
 const copyBtn = document.getElementById("copy-text");
-
 copyBtn.addEventListener("click", copyText);
 
-// to Bold text 
-// function boldText() { 
-//     const strongElement = document.createElement("strong");
-//     const userSelection = window.getSelection();
-//     const selectedTextRange = userSelection.getRangeAt(0);
-//     selectedTextRange.surroundContents(strongElement);
-// }
+//making text bold
+function boldText() {
+  const sel = window.getSelection();
+  if (sel.rangeCount) {
+    // Creates a new element, and insert the selected text with the chosen style
+    var e = document.createElement("b");
+    e.classList.add("bold"); // Selected style (class)
+    e.innerHTML = sel.toString(); // Selected text
 
-// const boldBtn = document.getElementById("bold-text");
-
-// boldBtn.addEventListener("click", boldText);
+    var range = sel.getRangeAt(0);
+    range.deleteContents(); // Deletes selected text…
+    range.insertNode(e); // … and inserts the new element at its place
+  }
+}
+const boldBtn = document.getElementById("bold-text");
+boldBtn.addEventListener("click", boldText);

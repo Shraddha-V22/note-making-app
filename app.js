@@ -112,18 +112,35 @@ const copyBtn = document.getElementById("copy-text");
 copyBtn.addEventListener("click", copyText);
 
 //making text bold
-function boldText() {
-  const sel = window.getSelection();
-  if (sel.rangeCount) {
-    // Creates a new element, and insert the selected text with the chosen style
-    var e = document.createElement("b");
-    e.classList.add("bold"); // Selected style (class)
-    e.innerHTML = sel.toString(); // Selected text
+// function boldText() {
+//   const sel = window.getSelection();
+//   if (sel.rangeCount) {
+//     // Creates a new element, and insert the selected text with the chosen style
+//     var e = document.createElement("span");
+//     e.classList.add("bold"); // Selected style (class)
+//     e.innerHTML = sel.toString(); // Selected text
 
-    var range = sel.getRangeAt(0);
-    range.deleteContents(); // Deletes selected text…
-    range.insertNode(e); // … and inserts the new element at its place
-  }
-}
-const boldBtn = document.getElementById("bold-text");
-boldBtn.addEventListener("click", boldText);
+//     var range = sel.getRangeAt(0);
+//     range.deleteContents(); // Deletes selected text…
+//     range.insertNode(e); // … and inserts the new element at its place
+//   }
+// }
+// const boldBtn = document.getElementById("bold-text");
+// boldBtn.addEventListener("click", boldText);
+
+// //making text underlined
+// function underlineText() {
+//   const sel = window.getSelection();
+//   if (sel.rangeCount) {
+//     // Creates a new element, and insert the selected text with the chosen style
+//     var e = document.createElement("span");
+//     e.classList.add("underline"); // Selected style (class)
+//     e.innerHTML = sel.toString(); // Selected text
+
+//     var range = sel.getRangeAt(0);
+//     range.deleteContents(); // Deletes selected text…
+//     range.insertNode(e); // … and inserts the new element at its place
+//   }
+// }
+// const underlineBtn = document.getElementById("underline-text");
+// underlineBtn.addEventListener("click", underlineText);

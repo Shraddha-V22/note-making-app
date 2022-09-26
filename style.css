@@ -191,6 +191,9 @@ nav {
 .bold {
   font-weight: bold;
 }
+.underline {
+  text-decoration: underline;
+}
 
 @media (width < 500px) {
     #input-note {

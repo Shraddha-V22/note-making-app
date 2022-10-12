@@ -45,10 +45,10 @@ function showNotes() {
   let html = "";
   notesArr.forEach((element, index) => {
     html += `
-        <div class="note-card">
-          <div id="note${index}" onclick="openNote(this.id)">
+        <div class="note-card" id="note-${index}" onclick="openNote(this.id)">
+          <div>
             <h3>${element.title}</h3>
-            <p class="note-text">${element.body}</p>
+            <p class="note-text">${element.body.length < 150 ? element.body : element.body.slice(0, 150) + "..."}</p>
           </div>
           <button id="${index}" onclick="deleteNote(this.id)" class="delete-note">Delete note</button>
         </div>
@@ -84,11 +84,25 @@ function deleteNote(id) {
 }
 
 //opening a note
-function openNote(id) {
+function openNote(id, e) {
+  if(e && e.stopPropagation) {
+    e.stopPropagation();
+  }
   const note = document.getElementById(id);
 
-  noteTitle.value = note.children[0].textContent;
-  noteBody.value = note.children[1].textContent;
+  const notes = localStorage.getItem("notes");
+
+  if (notes == null) {
+    notesArr = [];
+  } else {
+    notesArr = JSON.parse(notes);
+  }
+
+  const index = id.split("-")[1]
+  const noteOpened = notesArr.slice(index, index+1);
+
+  noteTitle.value = noteOpened[0].title;
+  noteBody.value = noteOpened[0].body;
 
   openNoteInput.classList.add("new-note-modal");
 }
